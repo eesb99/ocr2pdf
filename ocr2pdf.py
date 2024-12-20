@@ -23,16 +23,16 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 def process_image(image_path: Path) -> str:
-    """Extract text from an image or PDF using OCR.
+    """Extract text from an image using OCR.
 
     Args:
-        image_path: Path to the input image or PDF file.
+        image_path: Path to the input image file.
 
     Returns:
-        str: Extracted text from the image or PDF.
+        str: Extracted text from the image.
 
     Raises:
-        ValueError: If the image or PDF file is invalid or unreadable.
+        ValueError: If the image file is invalid or unreadable.
     """
     image = None
     try:
@@ -60,7 +60,7 @@ def process_image(image_path: Path) -> str:
         logger.error(f"Error processing file {image_path}: {str(e)}")
         raise ValueError(f"Failed to process file: {str(e)}")
     finally:
-        if image and not isinstance(image, fitz.fitz.Page):
+        if image and not isinstance(image, fitz.Page):
             image.close()
 
 def create_pdf(text: str, output_path: Path) -> None:
