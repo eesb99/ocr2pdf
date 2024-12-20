@@ -1,0 +1,10 @@
+{
+    "ocr_config": {
+        "lang": "eng",
+        "confidence_threshold": 70
+    },
+    "pdf_config": {
+        "compression": true,
+        "output_quality": "high"
+    }
+}

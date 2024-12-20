@@ -1,0 +1,39 @@
+# environment.yml - Core dependencies installed via conda
+name: ocr2pdf
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python environment
+  - python=3.10.12
+
+  # Document Processing
+  - pypdf2=3.0.1        # PDF handling
+  - reportlab=4.0.7     # PDF creation
+  
+  # Image Processing
+  - pillow=10.0.1       # Image processing
+  - pytesseract=0.3.10  # OCR processing
+
+  # System Tools
+  - tesseract=5.3.3     # OCR engine
+  - ghostscript=10.04.0 # PDF processing
+
+  # CLI and Development
+  - click>=8.1.0,<9.0.0    # Command line interface
+  - rich>=13.0.0,<14.0.0   # Rich text formatting
+  - pytest>=7.0.0,<8.0.0   # Testing
+  - pre-commit=3.5.0       # Git hooks
+  - black=23.11.0          # Code formatting
+  - flake8=6.1.0          # Code linting
+  - mypy=1.7.1            # Type checking
+  - bandit=1.7.5          # Security checks
+  - setuptools>=68.0.0    # Build tools
+  - wheel>=0.40.0         # Build tools
+  - pip                   # For installing additional packages
+
+  # Additional pip packages
+  - pip:
+    - -r requirements.txt
